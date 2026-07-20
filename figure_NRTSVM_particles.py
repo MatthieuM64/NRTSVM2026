@@ -84,7 +84,7 @@ elif NCPU<1:
 
 arrlen=0.15
 lw=0.001
-dpi=180
+dpi=320
 
 #Create one snapshot (one frame of the movie)
 def Snapshot(i):
@@ -111,8 +111,8 @@ def Snapshot(i):
 		ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('$%.8g$'))
 		ax.yaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('$%.8g$'))
 		
-		plt.text(0,1.02*LY,'$t=%d$'%(i*DT),ha='left',va='center',fontsize=15)
-		plt.text(LX,1.02*LY,'$v_0=%.8g$, $\eta=%.8g$, $\\rho_0=%.8g$, $\\mu=%.8g$'%(v0,eta,rho0,JAB),ha='right',va='center',fontsize=15)
+		plt.text(0.01*LX,0.01*LY,'$t=%d$'%(t),ha='left',va='bottom',fontsize=20,bbox=dict(facecolor="white", alpha=0.5, edgecolor="none"),zorder=1)
+		plt.text(0.5*LX,1.03*LY,'$v_0=%.8g$, $\eta=%.8g$, $\\rho_0=%.8g$, $\\mu=%.8g$'%(v0,eta,rho0,JAB),ha='center',va='center',fontsize=20)
 		
 		plt.savefig('snapshots/figure_TSVM_v0=%.8g_eta=%.8g_rho0=%.8g_JAB=%.8g_JBA=%.8g_LX=%d_LY=%d_init=%d_ran=%d_%d.png'%(v0,eta,rho0,JAB,JBA,LX,LY,init,ran,i),dpi=dpi)
 		plt.close()
